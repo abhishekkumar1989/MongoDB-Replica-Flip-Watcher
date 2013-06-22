@@ -1,5 +1,5 @@
 /**
-  Some terms:
+	Some terms:
 		downEvents : A member is reporting another member to be down
 		upEvents: A member reporting another member to be up
 	
@@ -8,9 +8,11 @@
 		For each member, for each node of cluster, total upEvents and downEvents are calculated
 		This script is meant for notifying all the up and events reported by each of the server about other members
 		The script can be modified to serve more purpose, for eg., only notify when there is an issue i.e. (downEvents > upEvents)
+		Run the script every 5 min, which can be changed in the value 'fiveMinsAgo', on all the replica nodes
 
 	How to run:
 		mongo --host <hostname> --port <port-no> -u<username> -p<password> <rs_flip_watcher.js>
+
 	Output:
 		OUTPUT: 2
 		{ "<host-name>" : { "upEvents" : 2, "downEvents" : 2 } }	// no need to worry, but for information, two flips happened
